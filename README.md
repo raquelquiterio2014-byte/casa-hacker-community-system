@@ -1,5 +1,4 @@
-# casa-hacker-community-system
-Sistema web desenvolvido para a Casa Hacker com foco na divulgação de projetos sociais, parceiros e iniciativas STEM, utilizando HTML, CSS e JavaScript.
+
 
 # Casa Hacker Community System
 
@@ -9,7 +8,7 @@ Sistema web desenvolvido para a organização Casa Hacker com o objetivo de cent
 
 O projeto foi desenvolvido como parte da disciplina de Curricularização da Extensão do curso de Análise e Desenvolvimento de Sistemas da FATEC Campinas.
 
-A proposta busca criar uma plataforma moderna, acessível e responsiva para auxiliar a Casa Hacker na divulgação de:
+A proposta busca um site moderno, acessível e responsivo para auxiliar a Casa Hacker na divulgação de:
 
 - Projetos STEM;
 - Parceiros e patrocinadores;
@@ -58,24 +57,6 @@ https://casahacker.org/
 - Atualizar conteúdos;
 - Inserir imagens e informações.
 
----
-
-## 📂 Estrutura do Projeto
-
-```bash
-/casa-hacker-community-system
-│
-├── css/
-│   └── style.css
-│
-├── js/
-│   └── script.js
-│
-├── img/
-│
-├── index.html
-├── projetos.html
-├── parceiros.html
 └── README.md
 ```
 
@@ -123,15 +104,6 @@ FATEC Campinas – Centro Paula Souza
 Geraldo Barros  
 Diretor Executivo da Casa Hacker
 
----
-
-## 🔐 Requisitos Não Funcionais
-
-- Interface responsiva;
-- Navegação intuitiva;
-- Compatibilidade mobile;
-- Segurança de dados;
-- Organização visual simples e moderna.
 
 ---
 
