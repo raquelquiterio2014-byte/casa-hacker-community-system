@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>casa:hacker - Projetos</title>
+    <style>
+        /* Variáveis de cores extraídas da imagem oficial */
+        :root {
+            --bg-white: #ffffff;
+            --text-black: #000000;
+            --text-gray: #333333;
+            --line-gray: #e5e5e5;
+            --brand-green: #2cbd59;
+            --dark-box: #3b423d;
+            
+            --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --font-mono: 'Courier New', Courier, monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-white);
+            color: var(--text-black);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- HEADER --- */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            border-bottom: 1px solid var(--line-gray);
+            padding-left: 4%;
+            background-color: var(--bg-white);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            text-transform: lowercase;
+        }
+
+        nav.main-nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav.main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav.main-nav a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.2s;
+        }
+
+        nav.main-nav a:hover, nav.main-nav a.active {
+            color: var(--text-black);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .search-icon {
+            padding: 0 30px;
+            font-size: 18px;
+            cursor: pointer;
+            color: var(--text-gray);
+        }
+
+        .menu-block {
+            width: 80px;
+            height: 100%;
+            background-color: var(--dark-box);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--brand-green);
+            cursor: pointer;
+        }
+
+        .menu-block::before {
+            content: "⠿"; 
+            font-size: 24px;
+            color: #fff;
+        }
+
+        /* --- LAYOUT PRINCIPAL EM 3 COLUNAS --- */
+        .main-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            min-height: calc(100vh - 80px);
+            max-width: 100%;
+        }
+
+        .column {
+            border-right: 1px solid var(--line-gray);
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .column:last-child {
+            border-right: none;
+        }
+
+        /* --- TÍTULO DA SEÇÃO --- */
+        .section-header {
+            margin-bottom: -20px;
+        }
+
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            margin-bottom: 25px;
+        }
+
+        /* --- BOTÃO DE UPLOAD --- */
+        .btn-upload {
+            background-color: var(--brand-green);
+            color: var(--bg-white);
+            border: none;
+            padding: 15px 20px;
+            font-family: var(--font-mono);
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            width: max-content;
+        }
+
+        .btn-upload:hover {
+            background-color: var(--dark-box);
+        }
+
+        .btn-upload:active {
+            transform: scale(0.98);
+        }
+
+        /* --- CARDS DOS PROJETOS --- */
+        .card {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .card:hover .title {
+            text-decoration: underline;
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            background-color: #f1f1f1;
+            margin-bottom: 20px;
+            overflow: visible;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .arrow-box {
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background-color: var(--dark-box);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--brand-green);
+            font-size: 18px;
+            font-family: var(--font-mono);
+            transition: background-color 0.3s;
+        }
+
+        .card:hover .arrow-box {
+            background-color: var(--text-black);
+        }
+
+        .tags {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--brand-green);
+            margin-bottom: 15px;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.4;
+            color: var(--text-black);
+        }
+
+        /* --- MODAL DE UPLOAD --- */
+        .modal-overlay {
+            display: none; /* Oculto por padrão */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: var(--bg-white);
+            width: 90%;
+            max-width: 500px;
+            padding: 40px;
+            position: relative;
+            border: 2px solid var(--text-black);
+            box-shadow: 10px 10px 0px rgba(0,0,0,1); /* Estilo brutalista */
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--text-gray);
+        }
+
+        .close-modal:hover {
+            color: var(--text-black);
+        }
+
+        .modal-title {
+            font-size: 24px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--line-gray);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: var(--text-gray);
+        }
+
+        .form-group input[type="text"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--line-gray);
+            font-family: var(--font-sans);
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--brand-green);
+        }
+
+        .form-group input[type="file"] {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .btn-submit {
+            background-color: var(--text-black);
+            color: var(--bg-white);
+            border: none;
+            width: 100%;
+            padding: 15px;
+            font-family: var(--font-mono);
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--brand-green);
+        }
+
+        /* Responsividade */
+        @media (max-width: 1024px) {
+            .main-container { grid-template-columns: 1fr 1fr; }
+            .column:nth-child(2) { border-right: none; }
+        }
+
+        @media (max-width: 768px) {
+            nav.main-nav { display: none; }
+            .main-container { grid-template-columns: 1fr; }
+            .column { border-right: none; border-bottom: 1px solid var(--line-gray); padding: 40px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">casa:hacker</div>
+        
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">INOVAÇÃO SOCIAL</a></li>
+                <li><a href="#">EDUCAÇÃO STEAM</a></li>
+                <li><a href="#" class="active">PROJETOS</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <div class="search-icon">🔍</div>
+            <div class="menu-block"></div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        
+        <div class="column">
+            <div class="section-header">
+                <span class="section-label">/ Projetos de Alunos</span>
+                <h1 class="section-title">Vitrine</h1>
+                <button class="btn-upload" onclick="openModal()">+ ENVIAR PROJETO</button>
+            </div>
+
+            <article class="card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Placa de circuito IoT">
+                    <div class="arrow-box">&rarr;</div>
+                </div>
+                <div class="tags">Em Andamento, Internet das Coisas</div>
+                <h2 class="title">Sistema de Monitoramento Ambiental IoT com sensores de baixo custo</h2>
+            </article>
+
+            <article class="card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=600&q=80" alt="Código no monitor">
+                    <div class="arrow-box">&rarr;</div>
+                </div>
+                <div class="tags">Em Andamento, App Mobile</div>
+                <h2 class="title">Aplicativo React Native para mapear e conectar doações locais a ONGs</h2>
+            </article>
+        </div>
+
+        <div class="column">
+            <article class="card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?auto=format&fit=crop&w=600&q=80" alt="Alunos trabalhando juntos">
+                    <div class="arrow-box">&rarr;</div>
+                </div>
+                <div class="tags">Concluído, Educação STEAM</div>
+                <h2 class="title">Robótica com Sucata: Construindo braços hidráulicos com e-waste</h2>
+            </article>
+
+            <article class="card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Impressão 3D">
+                    <div class="arrow-box">&rarr;</div>
+                </div>
+                <div class="tags">Concluído, Hardware Livre</div>
+                <h2 class="title">Estação Meteorológica Open-Source com peças modeladas em impressão 3D</h2>
+            </article>
+        </div>
+
+        <div class="column">
+            <article class="card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=600&q=80" alt="Design Gráfico">
+                    <div class="arrow-box">&rarr;</div>
+                </div>
+                <
