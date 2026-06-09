@@ -57,8 +57,8 @@ https://casahacker.org/
 - Atualizar conteúdos;
 - Inserir imagens e informações.
 
-└── README.md
-```
+
+
 
 ---
 
@@ -115,6 +115,8 @@ Diretor Executivo da Casa Hacker
 - Gestão de projetos externos;
 - Calendário interativo;
 - API para parceiros.
+
+Sistema de Páginas: https://casahackerweb.netlify.app/
 
 ---
 
