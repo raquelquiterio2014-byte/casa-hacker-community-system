@@ -1,125 +1,17 @@
-
-
 # Casa Hacker Community System
 
-Sistema web desenvolvido para a organização Casa Hacker com o objetivo de centralizar e divulgar projetos sociais, parceiros, iniciativas STEM e ações de inovação social.
+Protótipos de páginas estáticas para divulgação visual de projetos e parceiros da Casa Hacker, desenvolvidos em equipe na disciplina de extensão de ADS da FATEC Campinas. Tecnologias presentes: HTML, CSS e JavaScript. O repositório **não contém backend, login funcional, banco de dados ou painel de administração**.
 
-## 📌 Objetivo do Projeto
+## Executar e navegar
 
-O projeto foi desenvolvido como parte da disciplina de Curricularização da Extensão do curso de Análise e Desenvolvimento de Sistemas da FATEC Campinas.
+Abra `index.html` no navegador para ver a tela circular de apresentação. `indexcasahacker.html` é outra versão dessa tela, e `indexcasahackerp.html` é um protótipo de página de projetos. Algumas imagens da página de projetos são carregadas de um serviço externo; os nomes de parceiros na tela circular são texto demonstrativo até que artes autorizadas sejam fornecidas.
 
-A proposta busca um site moderno, acessível e responsivo para auxiliar a Casa Hacker na divulgação de:
+A apresentação pública indicada pela equipe: https://casahackerweb.netlify.app/ . O código neste repositório pode representar protótipos diferentes da versão hospedada.
 
-- Projetos STEM;
-- Parceiros e patrocinadores;
-- Eventos e atividades;
-- Iniciativas sociais;
-- Projetos tecnológicos desenvolvidos pela comunidade.
+## Escopo
 
----
+Links marcados com `#`, botões de login e doação são elementos visuais sem funcionalidade. As telas ilustram uma proposta; a gestão de projetos, parceiros e eventos descrita inicialmente era uma intenção futura. Não insira dados pessoais nesses protótipos.
 
-## 🏢 Sobre a Casa Hacker
+## Equipe
 
-A Casa Hacker é uma organização sem fins lucrativos focada em:
-
-- Educação em STEM;
-- Inclusão tecnológica;
-- Inovação social;
-- Empreendedorismo;
-- Desenvolvimento científico para jovens de periferia.
-
-Site oficial:
-https://casahacker.org/
-
----
-
-## 🚀 Tecnologias Utilizadas
-
-- HTML5
-- CSS3
-- JavaScript
-- GitHub
-- GitHub Pages
-
----
-
-## 🎯 Funcionalidades do Sistema
-
-### Visitantes
-- Visualizar projetos;
-- Visualizar parceiros;
-- Buscar iniciativas;
-- Visualizar eventos.
-
-### Administradores
-- Gerenciar projetos;
-- Gerenciar parceiros;
-- Atualizar conteúdos;
-- Inserir imagens e informações.
-
-
-
-
----
-
-## 📱 Interface
-
-O sistema foi projetado seguindo princípios de usabilidade e responsividade, permitindo acesso por:
-
-- Computadores;
-- Tablets;
-- Smartphones.
-
----
-
-## 📋 Metodologia
-
-O projeto utiliza conceitos de:
-
-- Engenharia de Software;
-- SCRUM;
-- Casos de Uso;
-- Gestão Ágil;
-- Gestão de Configuração;
-- Planejamento de Testes.
-
----
-
-## 👥 Equipe
-
-Projeto acadêmico desenvolvido por:
-
-- Cristopher Kurita
-- Felipe Longhi
-- Raquel Cruz
-- Rogê Silva Antônio
-
-Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas  
-FATEC Campinas – Centro Paula Souza
-
----
-
-## 📖 Product Owner
-
-Geraldo Barros  
-Diretor Executivo da Casa Hacker
-
-
----
-
-## 📌 Futuras Melhorias
-
-- Dashboard administrativo;
-- Sistema de login;
-- Integração com banco de dados;
-- Gestão de projetos externos;
-- Calendário interativo;
-- API para parceiros.
-
-Sistema de Páginas: https://casahackerweb.netlify.app/
-
----
-
-## 📄 Licença
-
-Projeto acadêmico sem fins lucrativos desenvolvido para fins educacionais.
+Cristopher Kurita, Felipe Longhi, Raquel Cruz e Rogê Silva Antônio. Projeto acadêmico para fins educacionais. Site da organização: https://casahacker.org/ .
